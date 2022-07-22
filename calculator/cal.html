@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+    <style>
+        body
+        {
+             background-color: beige;
+        }
+        #wrap
+        {
+            height: 500px;
+            width: 400px;
+            padding: 50px;
+            margin: auto;
+            background-color: cadetblue;
+
+
+        }
+        #txt
+            {
+                height: 60px;
+                width: 380px;
+                font-size: 30px;
+                border: 2px solid black;
+                background-color:whitesmoke;
+                color:black;
+                padding: 0px 10px;
+                margin-bottom: 5px;
+                
+                outline: 0px;
+               
+            }
+            .btn
+            {
+                height: 90px;
+                width: 86px;
+                margin: 5px;
+                padding: 0px;
+                font-size: 30px;
+                background-color: whitesmoke;
+                color:black;
+                border: 1px solid black;
+              
+            
+            }
+            .equal
+            {
+                height: 50px;
+                width: 390px;
+                font-size: 50px;
+                background-color:whitesmoke;
+                color:black;
+                border: 1px solid black;
+                margin: 5px;
+                
+            }
+    </style>
+</head>
+<body>
+    <div id="wrap" cellspacing="2px">
+        <input type="text" id="txt" readonly>
+
+        <button onclick="dis(this.value)" class="btn" value="9">9</button>
+        <button onclick="dis( this.value)" class="btn"  value="8">8</button>
+        <button onclick="dis( this.value)" class="btn"  value="7">7</button>
+        <button onclick="dis( this.value)" class="btn"  value="+">+</button>
+
+        <button onclick="dis(this.value)" class="btn" value="6">6</button>
+        <button onclick="dis( this.value)" class="btn"  value="5">5</button>
+        <button onclick="dis( this.value)" class="btn"  value="4">4</button>
+        <button onclick="dis( this.value)" class="btn"  value="-">-</button>
+
+
+        <button onclick="dis( this.value)" class="btn"  value="3">3</button>
+        <button onclick="dis( this.value)" class="btn"  value="2">2</button>
+        <button onclick="dis( this.value)" class="btn"  value="1">1</button>
+        <button onclick="dis( this.value)" class="btn"  value="*">x</button>
+
+        <button onclick="dis(this.value)" class="btn" value="0">0</button>
+        <button onclick="clr()" class="btn" value="">C</button>
+        <button onclick="back()" class="btn" value="">back</button>
+        <button onclick="dis(this.value)" class="btn" value="/">/</button>  
+
+        <button onclick="evalute()" class="equal" value="=">=</button>
+
+    </div>
+    <script>
+        
+        tmp = ""
+            function dis(v)
+            {
+                tmp=tmp+v
+                document.getElementById('txt').value=tmp;
+            }
+
+            function evalute()
+            {
+                var x = document.getElementById('txt').value;
+                var z = eval(x)
+                document.getElementById('txt').value=z;
+                tmp = z;
+            }
+
+            function clr()
+            {
+                tmp =""
+                document.getElementById('txt').value=tmp;
+            }
+            function back()
+            {
+                var x = document.getElementById('txt').value;
+                z = x.slice(0,x.length-1);
+                tmp =z;
+                document.getElementById('txt').value=tmp;
+            }
+            
+    </script>
+</body>
+</html>
